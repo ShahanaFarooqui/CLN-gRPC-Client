@@ -1,10 +1,10 @@
 const fs = require('fs');
 const grpc = require('@grpc/grpc-js');
 var protoLoader = require('@grpc/proto-loader');
-const PROTO_PATH = './node.proto';
-const client_key = fs.readFileSync('./client-key.pem');
-const client_cert = fs.readFileSync('./client.pem');
-const ca_cert = fs.readFileSync('./ca.pem');
+const PROTO_PATH = './proto/node.proto';
+const client_key = fs.readFileSync('./certs/client-key.pem');
+const client_cert = fs.readFileSync('./certs/client.pem');
+const ca_cert = fs.readFileSync('./certs/ca.pem');
 
 const options = {
   keepCase: true,
@@ -30,4 +30,3 @@ client.Getinfo({}, (error, info) => {
   info.color = Buffer.from(info.color, 'base64').toString('hex')
   console.log(info);
 });
-
