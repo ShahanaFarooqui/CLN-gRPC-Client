@@ -1,0 +1,9 @@
+{
+  "name": "grpc-poc",
+  "version": "0.0.0",
+  "license": "MIT",
+  "dependencies": {
+    "@grpc/grpc-js": "^1.6.7",
+    "@grpc/proto-loader": "^0.6.13"
+  }
+}
