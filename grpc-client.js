@@ -26,5 +26,8 @@ const client = new CLNService(
 
 client.Getinfo({}, (error, info) => {
   if (error) throw error;
+  info.id = Buffer.from(info.id, 'base64').toString('hex');
+  info.color = Buffer.from(info.color, 'base64').toString('hex')
   console.log(info);
 });
+
