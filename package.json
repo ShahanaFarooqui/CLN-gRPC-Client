@@ -1,5 +1,5 @@
 {
-  "name": "grpc-poc",
+  "name": "cln-grpc-client",
   "version": "0.0.0",
   "license": "MIT",
   "dependencies": {
