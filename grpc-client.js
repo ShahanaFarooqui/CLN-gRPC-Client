@@ -5,6 +5,7 @@ const PROTO_PATH = './proto/node.proto';
 const client_key = fs.readFileSync('./certs/client-key.pem');
 const client_cert = fs.readFileSync('./certs/client.pem');
 const ca_cert = fs.readFileSync('./certs/ca.pem');
+const GRPC_PORT = 5010;
 
 const options = {
   keepCase: true,
@@ -20,7 +21,7 @@ const CLNService = grpc.loadPackageDefinition(packageDefinition).cln.Node;
 let credentials = grpc.credentials.createSsl(ca_cert, client_key, client_cert);
 
 const client = new CLNService(
-  'localhost:5937',
+  'localhost:' + GRPC_PORT,
   credentials
 );
 
